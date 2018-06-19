@@ -1,6 +1,6 @@
 # tikape-runko
 
-Smoothiearkisto 1.0
+Smoothiearkisto 1.1
 
 OMINAISUUDET
 - Reseptien listaaminen
