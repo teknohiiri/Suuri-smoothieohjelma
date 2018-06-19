@@ -16,4 +16,5 @@ TULOSSA
 BUGIT
 - ratkaisematon nullpointer exception, kun reseptiin yritetään lisätä uutta ainetta
 - aineiden ja smoothieiden poistaminen ei toimi (error 404, eikä pyyntö mene läpi)
+- jos smoothiella ei ole aineksia, sen tarkastelu ei onnistu (error 500)
 
