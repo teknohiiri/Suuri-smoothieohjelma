@@ -1,0 +1,31 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <title></title>
+        <meta charset="utf-8" />
+    </head>
+
+    <body>
+
+        <h1><span th:text="${viesti}">Viesti tulee tähän</span></h1>
+
+        <ul>
+            <li th:each="aine: ${aineet}">
+                <span th:text="${aine.nimi}">Aine</span> (<a href="${aine.id}" th:text="${poisto}">poisto</a>)
+            </li>
+        </ul>
+
+        <h2 th:text="${lisays}">Lisäys</h2> 
+
+        <form method="POST" action="/luoaine">
+            <span th:text="${animi}">Aine:</span><br/>
+            <input type="text" name="nimi"/><br/>
+            <input type="submit" value="Lisää"/>
+        </form>
+
+        <h2 th:text="${lisaysAine}">Lisäys</h2> 
+
+        <p><a href="/">Takaisin smoothielistaukseen</a></p>
+    </body>
+</html>

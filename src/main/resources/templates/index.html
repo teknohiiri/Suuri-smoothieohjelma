@@ -2,15 +2,21 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
     <head>
-        <title>Otsikko</title>
+        <title></title>
         <meta charset="utf-8" />
     </head>
 
     <body>
-        <h1>Heippa vaan!</h1>
 
-        <p>Ja .. <span th:text="${viesti}">jotain?</span></p>
+         <h1><span th:text="${viesti}">Viesti tulee tähän</span></h1>
 
-        <p><a href="/opiskelijat">Tästä opiskelijalistaukseen.</a></p>
+         <ul>
+            <li th:each="resepti: ${reseptit}">
+                <a th:href="${'/resepti/' + resepti.id}"><span th:text="${resepti.nimi}">reseptin nimi</span></a>
+            </li>
+         </ul>
+         
+        <p><a href="/uusismoothie">Luo uusi smoothie</a></p>
+        <p><a href="/ainekset">Tarkastele ja lisää aineksia</a></p>
     </body>
 </html>
