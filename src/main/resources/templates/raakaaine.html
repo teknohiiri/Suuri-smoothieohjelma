@@ -12,7 +12,7 @@
 
         <ul>
             <li th:each="aine: ${aineet}">
-                <span th:text="${aine.nimi}">Aine</span> (<a href="${aine.id}" th:text="${poisto}">poisto</a>)
+                <span th:text="${aine.nimi}">Aine</span> (<a th:href="'/ainekset/' + ${aine.id + '/poistaaine/'}"><span th:text="${poisto}">poista!</span></a>)
             </li>
         </ul>
 

@@ -47,7 +47,7 @@ public class Main {
             map.put("viesti", "Tarkastele raaka-aineita");
             map.put("lisays", "Lisää raaka-aine");
             map.put("animi", "Aineen nimi");
-            map.put("poisto", "Poista");
+            map.put("poisto", "poista");
             map.put("aineet", aineDao.findAll());
 
             return new ModelAndView(map, "raakaaine");
@@ -69,6 +69,13 @@ public class Main {
 
             return new ModelAndView(map, "uusismoothie");
         }, new ThymeleafTemplateEngine());
+        
+        post("/ainekset/:id/poistaaine", (req, res) -> {
+            aineDao.delete(Integer.parseInt(req.params("id")));
+            System.out.println("Onnistui");
+            res.redirect("/ainekset");
+            return "";
+        });
 
         post("/uusismoothie", (req, res) -> {
             String nimi = req.queryParams("nimi");

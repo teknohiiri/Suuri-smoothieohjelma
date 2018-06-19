@@ -66,7 +66,19 @@ public class AineDao implements Dao<Aine, Integer> {
 
     @Override
     public void delete(Integer key) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Connection connection = database.getConnection();
+
+        PreparedStatement etsi = connection.prepareStatement("DELETE FROM RaakaAine WHERE id=?");
+        etsi.setObject(1, key);
+        etsi.executeUpdate();
+        etsi.close();
+        
+        PreparedStatement etsi2 = connection.prepareStatement("DELETE FROM AnnosRaakaAine WHERE raaka_aine_id=?");
+        etsi2.setObject(1, key);
+        etsi2.executeUpdate();
+        etsi2.close();
+
+        connection.close();
     }
 
     public void lisaaAine(String key) throws SQLException {

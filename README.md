@@ -1,4 +1,19 @@
 # tikape-runko
 
-Tietokantojen perusteet -kurssilla tehtävän web-sovelluksen pohja.
+Smoothiearkisto 1.0
+
+OMINAISUUDET
+- Reseptien listaaminen
+- ainesten listaaminen
+- Uusien reseptien lisääminen
+- Uusien ainesten lisääminen
+
+TULOSSA
+- reseptien poistaminen
+- ainesten poistaminen
+- ainesten yhdistäminen reseptiin
+
+BUGIT
+- ratkaisematon nullpointer exception, kun reseptiin yritetään lisätä uutta ainetta
+- aineiden ja smoothieiden poistaminen ei toimi (error 404, eikä pyyntö mene läpi)
 
